@@ -19,13 +19,13 @@ const envBuild = {
       // 'AWS_PORT=',
     ],
 
-    'socket-server': [
-      'NODE_ENV=',
-      'HOST=http://localhost', 
-      'PORT=4155',
-      'REST_SERVER_URL=http://localhost:4990',
-      'TOKEN_SECRET='
-    ]
+    // 'socket-server': [
+    //   'NODE_ENV=',
+    //   'HOST=http://localhost', 
+    //   'PORT=4155',
+    //   'REST_SERVER_URL=http://localhost:4990',
+    //   'TOKEN_SECRET='
+    // ]
   }
   
   module.exports = envBuild;

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "buildEnv": "node bin/buildEnv.js",
-    "db:setup:rest-server: cd rest-server && babel-node src/config/database/setup.js",
+    "db:setup:rest-server": "cd rest-server && babel-node src/config/database/setup.js",
     "setup rest-server": "cd rest-server && npm install",
     "start:rest-server": "cd rest-server && npm start"
   },
