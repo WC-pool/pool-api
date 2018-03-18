@@ -73,6 +73,8 @@ export const createPicksTable = async () => {
     await db.queryAsync(
       `CREATE TABLE IF NOT EXISTS picks (
         id SERIAL,
+        name text,
+        picker INT,
         groupA1 VARCHAR (255),
         groupA2 VARCHAR (255),
         groupB1 VARCHAR (255),
@@ -89,8 +91,8 @@ export const createPicksTable = async () => {
         groupG2 VARCHAR (255),
         groupH1 VARCHAR (255),
         groupH2 VARCHAR (255),
-        CONSTRAINT users_pk PRIMARY KEY(id)
-        CONSTRAINT fk_picks_creator FOREIGN KEY(picker) REFERENCES users(id),
+        CONSTRAINT picks_pk PRIMARY KEY(id),
+        CONSTRAINT fk_picks_picker FOREIGN KEY(picker) REFERENCES users(id)
         
       )
         `
