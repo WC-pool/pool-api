@@ -10,3 +10,14 @@ db.on('error', () => {
 db.once('open', () => {
   console.log('mongoose connected successfully');
 });
+
+const chatSchema = mongoose.Schema({
+  userName: String,
+  userImage: String,
+  message: String,
+  userId: Number,
+},
+{
+  timestamps: true
+}
+)
