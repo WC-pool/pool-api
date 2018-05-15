@@ -6,9 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "buildEnv": "node bin/buildEnv.js",
+    "start:mongod": "cd socket-server && mongod",
     "db:setup:rest-server": "cd rest-server && babel-node src/config/database/setup.js",
     "setup:rest-server": "cd rest-server && npm install",
-    "start:rest-server": "cd rest-server && npm start"
+    "start:rest-server": "cd rest-server && npm start",
+    "setup:socket-server": "cd socket-server && npm install",
+    "start:socket-server": "cd socket-server && npm start",
+    "start": "npm-run-all -p start:mongod start:rest-server start:socket-server"
   },
   "repository": {
     "type": "git",
@@ -22,6 +26,7 @@
   },
   "homepage": "https://github.com/WC-pool/pool-api#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "lodash": "^4.17.5",
     "node": "^9.8.0",

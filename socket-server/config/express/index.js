@@ -3,7 +3,7 @@ import parser from 'body-parser';
 import cors from 'cors';
 import helmet from 'helmet';
 
-import routes from '../database/routes';
+//import routes from '../database/routes';
 
 const middleWare = [
   helmet(),  
@@ -19,16 +19,16 @@ class App {
   constructor() {
     this.express = express();
     this.mountMiddleWare();
-    this.mountRoutes();
+   // this.mountRoutes();
   }
 
   mountMiddleWare() {
     this.express.use(...middleWare);
   }
 
-  mountRoutes() {
-    this.express.use('/api', routes);
-  }
+  // mountRoutes() {
+  //   this.express.use('/api', routes);
+  // }
 }
 
 export default new App();

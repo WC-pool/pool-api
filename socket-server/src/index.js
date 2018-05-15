@@ -4,7 +4,7 @@ import SocketIo from 'socket.io';
 import { each } from 'lodash';
 import Rooms from './rooms';
 import ClientEvents from './clientEvents';
-import routes from '../config/database/routes';
+//import routes from '../config/database/routes';
 import App from '../config/express'
 
 const app = App.express
