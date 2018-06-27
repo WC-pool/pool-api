@@ -2,5 +2,11 @@ import express from 'express';
 
 const router = express.Router();
 
+import { signUpController } from './authController'
 
-export default router;
+router.route('/signup')
+  .post(signUpController)
+
+
+
+  export default router;
