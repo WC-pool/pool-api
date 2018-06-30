@@ -60,7 +60,7 @@ export const createUsersTable = async () => {
 export const dropUsersTable = async () => {
   try {
     await db.queryAsync( 
-        `DROP TABLE IF EXISTS users`
+        `DROP TABLE IF EXISTS users cascade`
     );
     console.log('successfully dropped users table')
 } catch (err) {
