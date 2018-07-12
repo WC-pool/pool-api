@@ -4,3 +4,9 @@ export const createPicksHelper = (name, picker, Awinner, Arunner, Bwinner, Brunn
   ON CONFLICT DO NOTHING
   `
 }
+
+export const getAllHelper = () => {
+  return `
+      SELECT * FROM picks
+  `
+}

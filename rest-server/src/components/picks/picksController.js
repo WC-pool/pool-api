@@ -1,4 +1,6 @@
-import { createPicksQuery } from './picksQuery';
+import { createPicksQuery,
+         getAllQuery
+} from './picksQuery';
 
 export const createPicks = async (req, res) => {
   console.log('BANGO', req.body)
@@ -26,5 +28,15 @@ export const createPicks = async (req, res) => {
     res.status(200).send(data);
   } catch (err) {
     console.log('[picksController.js] createPicks error: ', err)  
+  }
+}
+
+
+export const getAll = async (req, res) => {
+  try {
+    const data = await getAllQuery()
+    return res.status(200).send(data);
+  } catch (err) {
+    console.log('[picksController.js] getAll error: ', err)
   }
 }
