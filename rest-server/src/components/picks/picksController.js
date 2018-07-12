@@ -7,6 +7,7 @@ export const createPicks = async (req, res) => {
   try {
     let name = req.body.name;
     let picker = req.body.picker;
+    let pickername = req.body.pickername;
     let Awinner = req.body.Awinner;
     let Arunner = req.body.Arunner;
     let Bwinner = req.body.Bwinner;
@@ -24,7 +25,7 @@ export const createPicks = async (req, res) => {
     let Hwinner = req.body.Hwinner;
     let Hrunner = req.body.Hrunner;
 
-    const data = await createPicksQuery(name, picker, Awinner, Arunner, Bwinner, Brunner, Cwinner, Crunner, Dwinner, Drunner, Ewinner, Erunner, Fwinner, Frunner, Gwinner, Grunner, Hwinner, Hrunner)
+    const data = await createPicksQuery(name, picker, pickername, Awinner, Arunner, Bwinner, Brunner, Cwinner, Crunner, Dwinner, Drunner, Ewinner, Erunner, Fwinner, Frunner, Gwinner, Grunner, Hwinner, Hrunner)
     res.status(200).send(data);
   } catch (err) {
     console.log('[picksController.js] createPicks error: ', err)  

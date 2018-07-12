@@ -75,6 +75,7 @@ export const createPicksTable = async () => {
         id SERIAL,
         name text,
         picker INT,
+        pickername VARCHAR (255),
         groupA1 VARCHAR (255),
         groupA2 VARCHAR (255),
         groupB1 VARCHAR (255),
