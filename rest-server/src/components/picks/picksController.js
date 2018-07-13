@@ -1,5 +1,6 @@
 import { createPicksQuery,
-         getAllQuery
+         getAllQuery,
+         getIndvlSetQuery
 } from './picksQuery';
 
 export const createPicks = async (req, res) => {
@@ -35,9 +36,19 @@ export const createPicks = async (req, res) => {
 
 export const getAll = async (req, res) => {
   try {
-    const data = await getAllQuery()
+    const data = await getAllQuery();
     return res.status(200).send(data);
   } catch (err) {
     console.log('[picksController.js] getAll error: ', err)
+  }
+}
+
+export const getIndvlSet = async (req,res) => {
+  try {
+    const data = await getIndvlSetQuery(req.query.id);
+    console.log('controlla DATA ', data)
+    return res.status(200).send(data);
+  } catch (err) {
+    console.log('[picksController.js] getIndvlSet error: ', err);
   }
 }

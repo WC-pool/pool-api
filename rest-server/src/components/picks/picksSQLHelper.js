@@ -11,4 +11,8 @@ export const getAllHelper = () => {
   `;
 }
 
-// (name, picker, groupA1, groupA2, groupB1, groupB2, groupC1, groupC2, groupD1, groupD2, groupE1, groupE2, groupF1, groupF2, groupG1, groupG2, groupH1, groupH2)
+export const getIndvlSetHelper = (setId) => {
+  return `
+    SELECT * FROM picks WHERE id = ${setId}
+  `
+}
