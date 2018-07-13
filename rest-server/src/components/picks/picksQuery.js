@@ -5,7 +5,7 @@ import { createPicksHelper,
 } from './picksSQLHelper';
 
 export const createPicksQuery = async (name, picker, pickername, Awinner, Arunner, Bwinner, Brunner, Cwinner, Crunner, Dwinner, Drunner, Ewinner, Erunner, Fwinner, Frunner, Gwinner, Grunner, Hwinner, Hrunner) => {
-  console.log('scott rogowsky', picker)
+  console.log('scott rogowsky', pickername)
   try {
     const queryString = createPicksHelper(name, picker, pickername, Awinner, Arunner, Bwinner, Brunner, Cwinner, Crunner, Dwinner, Drunner, Ewinner, Erunner, Fwinner, Frunner, Gwinner, Grunner, Hwinner, Hrunner)
     const data = await db.queryAsync(queryString);
