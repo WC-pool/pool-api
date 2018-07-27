@@ -4,7 +4,7 @@ import { getMessagesController } from './chatController';
 
 const chatRouter = express.Router();
 
-chatRouter.use('/getMessages')
+chatRouter.route('/getMessages')
   .get(getMessagesController)
 
 

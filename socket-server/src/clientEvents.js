@@ -21,7 +21,7 @@ const clientDisconnect = ({}) => {
 const clientMessage = ({ io, room }, payload) => {
   console.log('client message heard');
   
-  db.storeChat(payload.userId, payload.userName, payload.userImage, payload.userUid, payload.message, payload.room, payload.listingId, payload.accountType, function(err, data){
+  db.storeWcpchat(payload.userName, payload.message, payload.userId, function(err, data){
     if (err) {
       console.log('couldnt save message to mongodb')
     } else {

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/wcpool');
+mongoose.connect('mongodb://localhost/27017');
 
 const db = mongoose.connection;
 
@@ -11,17 +11,34 @@ db.once('open', () => {
   console.log('mongoose connected successfully');
 });
 
-const chatSchema = mongoose.Schema({
+const wcpchatSchema = mongoose.Schema({
   userName: String,
-  userImage: String,
   message: String,
-  userId: Number,
+  userId: String,
 },
 {
   timestamps: true
 }
 )
 
-const Chat = mongoose.model('Chat', chatSchema);
+const storeWcpchat = (userName, message, userId, callback) => {
+  
+  new Wcpchat({
+    userName: userName,
+    message: message,
+    userId: userId
+  }).save((err, data) => {
+    if (err) {
+      console.log('Error in storewcpchat: ', err);
+      callback(err, null);
+    } else {
+    callback(null, data);
+  }
+})
 
-module.exports.Chat = Chat;
+}
+
+const Wcpchat = mongoose.model('Wcpchat', wcpchatSchema);
+
+module.exports.Wcpchat = Wcpchat;
+module.exports.storeWcpchat = storeWcpchat;
