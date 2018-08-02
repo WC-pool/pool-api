@@ -13,7 +13,7 @@ export const getMessagesQuery = async () => {
 
 export const getLastMessageQuery = async () => {
   try {
-    const data = await db.Wcpchat.find().sort('-createAt').limit(1);
+    const data = await db.Wcpchat.find().sort('-createdAt').limit(1);
     return data;
   } catch (err) {
     console.log('[chatQuery.js] - getLastMessage Error: ', err);
